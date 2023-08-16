@@ -6,18 +6,24 @@ import 'package:untitled/constant.dart';
 import 'CatProductScreen.dart';
 
 class CategoryScreen extends StatelessWidget {
-  const CategoryScreen({super.key});
+  List<String> productCategories=[
+    'MAn',
+    'Women',
+    'Girl',
+  ];
+   CategoryScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Categories"),
+        title: Text("Categories",style: kAppBarTitleStyle,),
       ),
       body: Column(
         children: [
           ListView.builder(
-            itemCount: 3,
+            itemCount: productCategories.length,
               shrinkWrap: true,
               itemBuilder: (context,index){
             return GestureDetector(
@@ -29,23 +35,11 @@ class CategoryScreen extends StatelessWidget {
                 height: 150,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: kOrangeColor,
+                  image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?2'),fit: BoxFit.cover),
+                  color: kGreyColor.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(12)
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text("Boys",style: kHeadingText,),
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        borderRadius: BorderRadius.circular(12)
-                      ),
-                    )
-                  ],
-                ),
+                child: Center(child: Text(productCategories[index],style: kHeadingWhiteText,)),
               ),
             );
           })

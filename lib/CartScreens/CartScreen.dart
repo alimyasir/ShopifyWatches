@@ -36,7 +36,7 @@ class CartScreen extends StatelessWidget {
                         height: 150,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?5'),fit: BoxFit.cover),
+                          image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?6'),fit: BoxFit.cover),
 
                           borderRadius: BorderRadius.circular(12),
                         ),

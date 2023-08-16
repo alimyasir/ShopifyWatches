@@ -73,7 +73,7 @@ class ProductScreen extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                      color: kOrangeColor,
+                      color: kWhiteColor,
                       borderRadius: BorderRadius.circular(5)
                   ),
                   child: Center(child: Text('S')),
@@ -82,7 +82,7 @@ class ProductScreen extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                      color: kOrangeColor,
+                      color: kWhiteColor,
                       borderRadius: BorderRadius.circular(5)
                   ),
                   child: Center(child: Text('M')),
@@ -91,7 +91,7 @@ class ProductScreen extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                      color: kOrangeColor,
+                      color: kWhiteColor,
                       borderRadius: BorderRadius.circular(5)
                   ),
                   child: Center(child: Text('L')),
@@ -100,7 +100,7 @@ class ProductScreen extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                      color: kOrangeColor,
+                      color: kWhiteColor,
                       borderRadius: BorderRadius.circular(5)
                   ),
                   child: Center(child: Text('XL')),
@@ -109,7 +109,7 @@ class ProductScreen extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                      color: kOrangeColor,
+                      color: kWhiteColor,
                       borderRadius: BorderRadius.circular(5)
                   ),
                   child: Center(child: Text('XXL')),
@@ -123,7 +123,10 @@ class ProductScreen extends StatelessWidget {
               padding:  EdgeInsets.symmetric(horizontal: 9.0),
               child: Text('Girls Wonder Full Watches',style: kSubHeadingGrayText,),
             ),
-            Text('\$25.00',style: kHeadingText,)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text('\$25.00',style: kHeadingText,),
+            )
           ],
         ),
       ),

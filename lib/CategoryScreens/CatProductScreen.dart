@@ -39,7 +39,7 @@ class CarProductScreen extends StatelessWidget {
                       height: 150,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                          image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?5'),fit: BoxFit.cover),
+                          image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?3'),fit: BoxFit.cover),
 
                           color: kWhiteColor,
                         borderRadius: BorderRadius.circular(12)

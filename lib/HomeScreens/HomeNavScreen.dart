@@ -3,6 +3,8 @@ import 'package:untitled/HomeScreens/HomeScreen.dart';
 
 import '../CartScreens/CartScreen.dart';
 import '../CategoryScreens/CategoryScreen.dart';
+import '../SettingScreens/SettingScreen.dart';
+import '../WishlistScreens/WishlistScreen.dart';
 import '../constant.dart';
 
 class HomeNavScreen extends StatefulWidget {
@@ -29,7 +31,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
           // backgroundColor: kWhiteColor,
           type: BottomNavigationBarType.fixed,
           elevation: 0.0,
-          selectedItemColor: kDarkGrayColor,
+          selectedItemColor: kRedColor,
           unselectedItemColor: Colors.grey,
           showUnselectedLabels: false,
           showSelectedLabels: false,
@@ -54,10 +56,10 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
             : selectedIndex == 1
             ? CategoryScreen()
             : selectedIndex == 2
-            ?  Container()
+            ?  WishlistScreen()
             : selectedIndex == 3
             ? CartScreen()
-            : Container()
+            : SettingScreen()
     );
   }
 }

@@ -86,6 +86,7 @@ class CheckoutScreen extends StatelessWidget {
               ListView.builder(
                 itemCount: 2,
                   shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (context,index){
                 return Card(
                   child: Container(
@@ -101,7 +102,7 @@ class CheckoutScreen extends StatelessWidget {
                             height: 90,
                             width: 80,
                             decoration: BoxDecoration(
-                                image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?5'),fit: BoxFit.cover),
+                                image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?2'),fit: BoxFit.cover),
 
                                 borderRadius: BorderRadius.circular(12),
                               color: kWhiteColor
