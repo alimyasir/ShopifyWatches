@@ -15,25 +15,27 @@ class CartScreen extends StatelessWidget {
         title: Text("My Cart",style: kAppBarTitleStyle,),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ListView.builder(
-              physics: ScrollPhysics(),
-              itemCount: 5,
-                shrinkWrap: true,
-                itemBuilder: (context,index){
-              return Container(
-                margin: EdgeInsets.all(5.0),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12)
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              ListView.builder(
+                physics: ScrollPhysics(),
+                itemCount: 5,
+                  shrinkWrap: true,
+                  itemBuilder: (context,index){
+                return Container(
+                  height: 217,
+                  // margin: EdgeInsets.all(2.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    // color: kOrangeColor,
+                    borderRadius: BorderRadius.circular(12)
+                  ),
                   child: Column(
                     children: [
                       Container(
-                        height: 150,
+                        height: 145,
                         width: double.infinity,
                         decoration: BoxDecoration(
                           image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?6'),fit: BoxFit.cover),
@@ -85,32 +87,32 @@ class CartScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                ),
-              );
-            }),
+                );
+              }),
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: kWhiteColor,
-                    borderRadius: BorderRadius.circular(12),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Total",style: kHeadingText.copyWith(fontSize: 16),),
-                      Text("\$100",style: kSubHeadingText,)
-                    ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: kWhiteColor,
+                      borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Total",style: kHeadingText.copyWith(fontSize: 16),),
+                        Text("\$100",style: kSubHeadingText,)
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: kPrimaryButton(btnText: "Proceed to Checkout",onTap: (){

@@ -10,7 +10,10 @@ class CheckoutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Checkouts",style: kAppBarTitleStyle,),
+        title: Text(
+          "Checkouts",
+          style: kAppBarTitleStyle,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -18,7 +21,10 @@ class CheckoutScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Delivery Adress',style: kHeadingText,),
+              Text(
+                'Delivery Adress',
+                style: kHeadingText,
+              ),
               Card(
                 child: Container(
                   width: double.infinity,
@@ -32,49 +38,92 @@ class CheckoutScreen extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Text("Street:",style: kHeadingText.copyWith(fontSize: 16),),
-                            Text(" 3512 Pearl Street",style: kSecondaryGrayText,),
+                            Text(
+                              "Street:",
+                              style: kHeadingText.copyWith(fontSize: 16),
+                            ),
+                            Text(
+                              " 3512 Pearl Street",
+                              style: kSecondaryGrayText,
+                            ),
                           ],
                         ),
                         5.height,
                         Row(
                           children: [
-                            Text("City:",style: kHeadingText.copyWith(fontSize: 16),),
-                            Text(" Muridke",style: kSecondaryGrayText,),
+                            Text(
+                              "City:",
+                              style: kHeadingText.copyWith(fontSize: 16),
+                            ),
+                            Text(
+                              " Muridke",
+                              style: kSecondaryGrayText,
+                            ),
                           ],
                         ),
                         5.height,
                         Row(
                           children: [
-                            Text("State/pronince/area:",style: kHeadingText.copyWith(fontSize: 16),),
-                            Text(" Muridke",style: kSecondaryGrayText,),
+                            Text(
+                              "State/pronince/area:",
+                              style: kHeadingText.copyWith(fontSize: 16),
+                            ),
+                            Text(
+                              " Muridke",
+                              style: kSecondaryGrayText,
+                            ),
                           ],
                         ),
                         5.height,
                         Row(
                           children: [
-                            Text("Phone No:",style: kHeadingText.copyWith(fontSize: 16),),
-                            Text(" 3059644526",style: kSecondaryGrayText,),
+                            Text(
+                              "Phone No:",
+                              style: kHeadingText.copyWith(fontSize: 16),
+                            ),
+                            Text(
+                              " 3059644526",
+                              style: kSecondaryGrayText,
+                            ),
                           ],
                         ),
                         5.height,
                         Row(
                           children: [
-                            Text("Zip Code:",style: kHeadingText.copyWith(fontSize: 16),),
-                            Text(" 351200",style: kSecondaryGrayText,),
+                            Text(
+                              "Zip Code:",
+                              style: kHeadingText.copyWith(fontSize: 16),
+                            ),
+                            Text(
+                              " 351200",
+                              style: kSecondaryGrayText,
+                            ),
                           ],
                         ),
                         5.height,
                         Row(
                           children: [
-                            Text("Country Calling Code:",style: kHeadingText.copyWith(fontSize: 16),),
-                            Text(" +92",style: kSecondaryGrayText,),
+                            Text(
+                              "Country Calling Code:",
+                              style: kHeadingText.copyWith(fontSize: 16),
+                            ),
+                            Text(
+                              " +92",
+                              style: kSecondaryGrayText,
+                            ),
                           ],
                         ),
                         5.height,
-                        Row(children:[
-                            Text("Country:",style: kHeadingText.copyWith(fontSize: 16),),
-                            Text(" Pakistan",style: kSecondaryGrayText,),
+                        Row(
+                          children: [
+                            Text(
+                              "Country:",
+                              style: kHeadingText.copyWith(fontSize: 16),
+                            ),
+                            Text(
+                              " Pakistan",
+                              style: kSecondaryGrayText,
+                            ),
                           ],
                         ),
                       ],
@@ -82,43 +131,58 @@ class CheckoutScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Text('Product Items',style: kHeadingText,),
+              Text(
+                'Product Items',
+                style: kHeadingText,
+              ),
               ListView.builder(
-                itemCount: 2,
+                  itemCount: 2,
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (context,index){
-                return Card(
-                  child: Container(
-                    margin: EdgeInsets.all(5),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          leading: Container(
-                            height: 90,
-                            width: 80,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?2'),fit: BoxFit.cover),
-
-                                borderRadius: BorderRadius.circular(12),
-                              color: kWhiteColor
-                            ),
-                          ),
-                          title: Text('Roller Watch',style: kHeadingText.copyWith(fontSize: 15),),
-                          subtitle: Text('Vado Olera Watch',style: kSecondaryGrayText,),
-                          trailing: Text('\$400.00',style: kHeadingText.copyWith(fontSize: 15),),
+                  itemBuilder: (context, index) {
+                    return Card(
+                      child: Container(
+                        margin: EdgeInsets.all(5),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
                         ),
-
-                      ],
-                    ),
-                  ),
-                );
-              }),
-              Text('Promo Code',style: kHeadingText,),
+                        child: Column(
+                          children: [
+                            ListTile(
+                              leading: Container(
+                                height: 90,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                    image: const DecorationImage(
+                                        image: NetworkImage(
+                                            'https://source.unsplash.com/random/300?2'),
+                                        fit: BoxFit.cover),
+                                    borderRadius: BorderRadius.circular(12),
+                                    color: kWhiteColor),
+                              ),
+                              title: Text(
+                                'Roller Watch',
+                                style: kHeadingText.copyWith(fontSize: 15),
+                              ),
+                              subtitle: Text(
+                                'Vado Olera Watch',
+                                style: kSecondaryGrayText,
+                              ),
+                              trailing: Text(
+                                '\$400.00',
+                                style: kHeadingText.copyWith(fontSize: 15),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+              Text(
+                'Promo Code',
+                style: kHeadingText,
+              ),
               Card(
                 child: Container(
                   width: double.infinity,
@@ -126,18 +190,22 @@ class CheckoutScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: ListTile(
-                    title: Text('Add Promo Code',style: kHeadingText.copyWith(fontSize: 15),),
-                    subtitle: Text('#bkt2299',style: kSecondaryGrayText,),
+                    title: Text(
+                      'Add Promo Code',
+                      style: kHeadingText.copyWith(fontSize: 15),
+                    ),
+                    subtitle: Text(
+                      '#bkt2299',
+                      style: kSecondaryGrayText,
+                    ),
                     leading: Container(
                       height: 120,
                       width: 80,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: kRedColor,
-
                       ),
                     ),
-
                   ),
                 ),
               ),
@@ -146,8 +214,14 @@ class CheckoutScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Total",style: kHeadingText.copyWith(fontSize: 16),),
-                    Text("\$800",style: kHeadingText.copyWith(fontSize: 16),)
+                    Text(
+                      "Total",
+                      style: kHeadingText.copyWith(fontSize: 16),
+                    ),
+                    Text(
+                      "\$800",
+                      style: kHeadingText.copyWith(fontSize: 16),
+                    )
                   ],
                 ),
               ),

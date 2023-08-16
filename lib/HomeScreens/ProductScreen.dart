@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/constant.dart';
 
@@ -12,7 +11,7 @@ class ProductScreen extends StatelessWidget {
         title: Text('Pruducts',style: kAppBarTitleStyle,),
       ),
       body: Padding(
-        padding:  EdgeInsets.all(8.0),
+        padding:  const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -22,7 +21,7 @@ class ProductScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: kYellowColor,
                 borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?5'),fit: BoxFit.cover),
+                image: const DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?5'),fit: BoxFit.cover),
 
               ),
 
@@ -76,7 +75,7 @@ class ProductScreen extends StatelessWidget {
                       color: kWhiteColor,
                       borderRadius: BorderRadius.circular(5)
                   ),
-                  child: Center(child: Text('S')),
+                  child: const Center(child: Text('S')),
                 ),
                 Container(
                   height: 50,
@@ -85,7 +84,7 @@ class ProductScreen extends StatelessWidget {
                       color: kWhiteColor,
                       borderRadius: BorderRadius.circular(5)
                   ),
-                  child: Center(child: Text('M')),
+                  child: const Center(child: Text('M')),
                 ),
                 Container(
                   height: 50,
@@ -94,7 +93,7 @@ class ProductScreen extends StatelessWidget {
                       color: kWhiteColor,
                       borderRadius: BorderRadius.circular(5)
                   ),
-                  child: Center(child: Text('L')),
+                  child: const Center(child: Text('L')),
                 ),
                 Container(
                   height: 50,
@@ -103,7 +102,7 @@ class ProductScreen extends StatelessWidget {
                       color: kWhiteColor,
                       borderRadius: BorderRadius.circular(5)
                   ),
-                  child: Center(child: Text('XL')),
+                  child: const Center(child: Text('XL')),
                 ),
                 Container(
                   height: 50,
@@ -112,7 +111,7 @@ class ProductScreen extends StatelessWidget {
                       color: kWhiteColor,
                       borderRadius: BorderRadius.circular(5)
                   ),
-                  child: Center(child: Text('XXL')),
+                  child: const Center(child: Text('XXL')),
                 ),
 
 
@@ -120,7 +119,7 @@ class ProductScreen extends StatelessWidget {
             ),
             10.height,
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 9.0),
+              padding:  const EdgeInsets.symmetric(horizontal: 9.0),
               child: Text('Girls Wonder Full Watches',style: kSubHeadingGrayText,),
             ),
             Padding(
