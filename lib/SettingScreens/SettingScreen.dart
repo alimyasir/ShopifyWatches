@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:untitled/SettingScreens/LanguageScreen.dart';
+import 'package:untitled/SettingScreens/PrivacyScreen.dart';
+import 'package:untitled/SettingScreens/TermAndCondition.dart';
 import 'package:untitled/Widgets/ButtonWidgets.dart';
+import 'package:untitled/WishlistScreens/WishlistScreen.dart';
 import 'package:untitled/constant.dart';
 
+import '../Controllers/ThemeController.dart';
+
 class SettingScreen extends StatelessWidget {
-  const SettingScreen({super.key});
+  final themeController = Get.find<ThemeController>();
+
+   SettingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +100,6 @@ class SettingScreen extends StatelessWidget {
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: kWhiteColor,
                     borderRadius: BorderRadius.circular(12)
                   ),
                   child: Padding(
@@ -108,8 +116,43 @@ class SettingScreen extends StatelessWidget {
                             ),
                             child: Icon(Icons.language),
                           ),
+                          title: Text('Wishlist',style: kSubHeadingText,),
+                          trailing: Icon(Icons.chevron_right),
+                          onTap: (){
+                            Get.to(()=>WishlistScreen());
+                          },
+                        ),
+                        ListTile(
+                          leading: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                                color: kGreyColor.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(12)
+                            ),
+                            child: Icon(Icons.language),
+                          ),
                           title: Text('Language',style: kSubHeadingText,),
                           trailing: Icon(Icons.chevron_right),
+                          onTap: (){
+                            Get.to(()=>LanguageScreen());
+                          },
+                        ),
+                        ListTile(
+                          leading: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                                color: kGreyColor.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(12)
+                            ),
+                            child: Icon(Icons.privacy_tip_outlined),
+                          ),
+                          title: Text('Privacy',style: kSubHeadingText,),
+                          trailing: Icon(Icons.chevron_right),
+                          onTap: (){
+                            Get.to(()=>PrivacyScreen());
+                          },
                         ),
                         10.height,
                         ListTile(
@@ -127,6 +170,10 @@ class SettingScreen extends StatelessWidget {
                         ),
                         10.height,
                         ListTile(
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            size: 17,
+                          ),
                           leading: Container(
                             height: 40,
                             width: 40,
@@ -134,10 +181,50 @@ class SettingScreen extends StatelessWidget {
                                 color: kGreyColor.withOpacity(0.2),
                                 borderRadius: BorderRadius.circular(12)
                             ),
-                            child: Icon(Icons.dark_mode_outlined),
+                            child: Icon(Icons.confirmation_num),
                           ),
-                          title: Text('Dark Mode',style: kSubHeadingText,),
+                          title: Obx(
+                                ()=> Text(
+                              themeController.isDark ? 'Light Mood' : 'Dark Mood',
+                              style: kSecondaryText.copyWith(
+                                color: themeController.isDark ? Colors.white : Colors.black,
+                                // color: themeController.isDark ? Colors.black : Colors.white,
+                              ),
+                            ),
+                          ),
+                          // title: Obx(
+                          //       () => ListTile(
+                          //         title: Padding(
+                          //           padding: const EdgeInsets.only(right: 38.0),
+                          //           child: Text(
+                          //             themeController.isDark ? 'Light Mood' : 'Dark Mood',
+                          //             style: kSecondaryText.copyWith(
+                          //               color: themeController.isDark ? Colors.white : Colors.black,
+                          //               // color: themeController.isDark ? Colors.black : Colors.white,
+                          //             ),
+                          //           ),
+                          //         ),
+                          //         onTap: () => themeController.toggleTheme(),
+                          //       ),
+                          // ),
+                          onTap: () => themeController.toggleTheme(),
+                        ),
+                        10.height,
+                        ListTile(
+                          leading: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                                color: kGreyColor.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(12)
+                            ),
+                            child: Icon(Icons.confirmation_num),
+                          ),
+                          title: Text('Terms&Conditions',style: kSubHeadingText,),
                           trailing: Icon(Icons.chevron_right),
+                          onTap: (){
+                            Get.to(()=>TermAndCondition());
+                          },
                         ),
                         10.height,
                         ListTile(

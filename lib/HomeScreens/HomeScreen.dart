@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled/constant.dart';
 
+import '../Controllers/ThemeController.dart';
 import 'ProductScreen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,6 +18,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeController = Get.find<ThemeController>();
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -37,10 +39,10 @@ class HomeScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Container(
                         margin: const EdgeInsets.all(5),
-                        width: 80,
+                        width: 90,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: kWhiteColor,
+                          // color: kWhiteColor,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -63,15 +65,17 @@ class HomeScreen extends StatelessWidget {
                       );
                     }),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              DefaultSelectionStyle(
+                cursorColor: themeController.isDark ? Colors.white : Colors.teal,
                 child: CupertinoSearchTextField(
+                  backgroundColor: themeController.isDark ? Colors.black : Colors.white,
                   padding: const EdgeInsets.all(10),
                   prefixIcon: Container(
                     height: 45,
                   ),
-                  style: const TextStyle(
+                  style:   TextStyle(
                     fontSize: 14.0,
+                    color:themeController.isDark ? Colors.white : Colors.black,
                   ),
                   autocorrect: true,
                   onChanged: (value) {},
@@ -79,13 +83,14 @@ class HomeScreen extends StatelessWidget {
                     // controller.homeSearch(value);
                     // setState(() {});
                   },
-                  decoration: BoxDecoration(
-                      color: cardColor,
-                      borderRadius: BorderRadius.circular(17),
-                      border: Border.all(
-                        width: 1,
-                        color: Colors.white,
-                      )),
+                  // decoration: BoxDecoration(
+                  //   color: kWhiteColor,
+                  //   borderRadius: BorderRadius.circular(25),
+                  //   border: Border.all(
+                  //     width: 1,
+                  //     color: kGreyColor.withOpacity(0.1),
+                  //   ),
+                  // ),
                 ),
               ),
               10.height,
@@ -139,12 +144,12 @@ class HomeScreen extends StatelessWidget {
                             ),
                             ListTile(
                               title: Text(
-                                '\$25.00',
+                                'Girls Watch',
                                 style: kSubHeadingText,
                               ),
                               subtitle: Text(
                                 maxLines: 2,
-                                'Girls Watch',
+                                '\$500.00',
                                 style: kSecondaryGrayText,
                               ),
                             ),

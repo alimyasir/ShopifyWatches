@@ -1,13 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled/Widgets/ButtonWidgets.dart';
 import 'package:untitled/constant.dart';
+
+import '../Controllers/ThemeController.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeController = Get.find<ThemeController>();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -30,7 +36,7 @@ class CheckoutScreen extends StatelessWidget {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: kWhiteColor,
+                    color: themeController.isDark ? Colors.black : Colors.white,
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -138,11 +144,11 @@ class CheckoutScreen extends StatelessWidget {
               ListView.builder(
                   itemCount: 2,
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return Card(
                       child: Container(
-                        margin: EdgeInsets.all(5),
+                        margin: const EdgeInsets.all(5),
                         width: double.infinity,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),

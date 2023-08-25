@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/HomeScreens/HomeScreen.dart';
+import 'package:untitled/SearchScreen.dart';
 
 import '../CartScreens/CartScreen.dart';
 import '../CategoryScreens/CategoryScreen.dart';
@@ -44,7 +45,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.near_me), label: 'New Lounch'),BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_outline), label: 'wish'),
+                icon: Icon(Icons.search), label: 'search'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.add_shopping_cart), label: 'My Cart'),
             BottomNavigationBarItem(
@@ -56,7 +57,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
             : selectedIndex == 1
             ? CategoryScreen()
             : selectedIndex == 2
-            ?  WishlistScreen()
+            ?  SearchScreen()
             : selectedIndex == 3
             ? CartScreen()
             : SettingScreen()

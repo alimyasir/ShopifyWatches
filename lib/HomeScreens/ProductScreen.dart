@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled/constant.dart';
+
+import '../Controllers/ThemeController.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeController = Get.find<ThemeController>();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Pruducts',style: kAppBarTitleStyle,),
@@ -31,8 +37,8 @@ class ProductScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 15,
-                  width: 15,
+                  height: 10,
+                  width: 10,
                   decoration: BoxDecoration(
                     color: kOrangeColor,
                     borderRadius: BorderRadius.circular(5)
@@ -40,8 +46,8 @@ class ProductScreen extends StatelessWidget {
                 ),
                 10.width,
                 Container(
-                  height: 15,
-                  width: 15,
+                  height: 10,
+                  width: 10,
                   decoration: BoxDecoration(
                       color: kOrangeColor,
                       borderRadius: BorderRadius.circular(5)
@@ -49,8 +55,8 @@ class ProductScreen extends StatelessWidget {
                 ),
                 10.width,
                 Container(
-                  height: 15,
-                  width: 15,
+                  height: 10,
+                  width: 10,
                   decoration: BoxDecoration(
                       color: kOrangeColor,
                       borderRadius: BorderRadius.circular(5)
@@ -72,7 +78,7 @@ class ProductScreen extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                      color: kWhiteColor,
+                    color: themeController.isDark ? Colors.black : Colors.white,
                       borderRadius: BorderRadius.circular(5)
                   ),
                   child: const Center(child: Text('S')),
@@ -81,7 +87,7 @@ class ProductScreen extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                      color: kWhiteColor,
+                      color:  themeController.isDark ? Colors.black : Colors.white,
                       borderRadius: BorderRadius.circular(5)
                   ),
                   child: const Center(child: Text('M')),
@@ -90,7 +96,7 @@ class ProductScreen extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                      color: kWhiteColor,
+                      color:themeController.isDark ? Colors.black : Colors.white,
                       borderRadius: BorderRadius.circular(5)
                   ),
                   child: const Center(child: Text('L')),
@@ -99,7 +105,7 @@ class ProductScreen extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                      color: kWhiteColor,
+                      color:themeController.isDark ? Colors.black : Colors.white,
                       borderRadius: BorderRadius.circular(5)
                   ),
                   child: const Center(child: Text('XL')),
@@ -108,7 +114,7 @@ class ProductScreen extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                      color: kWhiteColor,
+                      color: themeController.isDark ? Colors.black : Colors.white,
                       borderRadius: BorderRadius.circular(5)
                   ),
                   child: const Center(child: Text('XXL')),

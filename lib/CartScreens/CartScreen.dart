@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:untitled/Widgets/ButtonWidgets.dart';
 import 'package:untitled/constant.dart';
 
+import '../Controllers/ThemeController.dart';
 import 'CheckoutScreen.dart';
 
 class CartScreen extends StatelessWidget {
@@ -10,6 +11,8 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeController = Get.find<ThemeController>();
+
     return Scaffold(
       appBar: AppBar(
         title: Text("My Cart",style: kAppBarTitleStyle,),
@@ -20,7 +23,7 @@ class CartScreen extends StatelessWidget {
           child: Column(
             children: [
               ListView.builder(
-                physics: ScrollPhysics(),
+                physics: const ScrollPhysics(),
                 itemCount: 5,
                   shrinkWrap: true,
                   itemBuilder: (context,index){
@@ -38,7 +41,7 @@ class CartScreen extends StatelessWidget {
                         height: 145,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?6'),fit: BoxFit.cover),
+                          image: const DecorationImage(image: NetworkImage('https://source.unsplash.com/random/300?6'),fit: BoxFit.cover),
 
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -46,8 +49,8 @@ class CartScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 35),
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 35),
                               child: ListTile(
                                 trailing: CircleAvatar(
                                   backgroundColor: kWhiteColor,
@@ -61,17 +64,17 @@ class CartScreen extends StatelessWidget {
                                 height: 30,
                                 width: 80,
                                 decoration: BoxDecoration(
-                                  color: kWhiteColor,
+                                  color: themeController.isDark ? Colors.black : Colors.white,
                                   borderRadius: BorderRadius.circular(10)
                                 ),
                                 child: Row(
                                   children: [
                                     10.width,
-                                    Icon(Icons.remove,size: 18,),
+                                    const Icon(Icons.remove,size: 18,),
                                     10.width,
                                     Text('1'),
                                     10.width,
-                                    Icon(Icons.add,size: 18,)
+                                    const Icon(Icons.add,size: 18,)
                                   ],
                                 ),
                               ),
@@ -96,7 +99,7 @@ class CartScreen extends StatelessWidget {
                   height: 50,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: kWhiteColor,
+                    color: themeController.isDark ? Colors.black : Colors.white,
                       borderRadius: BorderRadius.circular(12),
                   ),
                   child: Padding(
@@ -116,7 +119,7 @@ class CartScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: kPrimaryButton(btnText: "Proceed to Checkout",onTap: (){
-        Get.to(()=>CheckoutScreen());
+        Get.to(()=>const CheckoutScreen());
       }),
     );
   }

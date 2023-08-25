@@ -1,11 +1,8 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-
-import '../CartScreens/CheckoutScreen.dart';
-import '../Widgets/ButtonWidgets.dart';
+import '../Controllers/ThemeController.dart';
 import '../constant.dart';
 
 class WishlistScreen extends StatelessWidget {
@@ -13,6 +10,7 @@ class WishlistScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeController = Get.find<ThemeController>();
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -109,7 +107,7 @@ class WishlistScreen extends StatelessWidget {
                                       height: 30,
                                       width: 80,
                                       decoration: BoxDecoration(
-                                          color: kWhiteColor,
+                                          color:  themeController.isDark ? Colors.black : Colors.white,
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                       // child: Row(
@@ -158,7 +156,7 @@ class WishlistScreen extends StatelessWidget {
                   height: 50,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: kWhiteColor,
+                    // color: kWhiteColor,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Padding(
